@@ -22,9 +22,9 @@ def extract_wwr_jobs(keyword):
                 #find all은 list로 가져오고, find는 result로 가져온다.
                 job_data = {
                     'link' :f"https://weworkremotely.com{link}",
-                    'company' : company.string,
-                    'region' : region.string,
-                    'position' : title.string
+                    'company' : company.string.replace(","," "),
+                    'location' : region.string.replace(","," "),
+                    'position' : title.string.replace(","," ")
                 }
                 results.append(job_data)
         return results
